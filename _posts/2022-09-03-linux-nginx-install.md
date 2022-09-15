@@ -6,15 +6,13 @@ categories: [Linux,Nginx]
 tags: [Linux,Nginx]
 ---
 
-
-
 对于Linux，可以使用来自nginx.org的[nginx软件包](http://nginx.org/en/linux_packages.html "nginx软件包")，也可以从源代码编译来安装nginx。
 
 ## Nginx编译安装
 
-### 1. 安装前工作
+### 1.安装前工作
 
-首先更新系统软件源，使用以下命令更新系统 -
+首先更新系统软件源，使用以下命令更新系统 
 
 ```shell
 [root@localhost ~]# yum update
@@ -31,10 +29,9 @@ tags: [Linux,Nginx]
 [root@localhost src]# yum -y install zlib zlib-devel openssl openssl-devel pcre-devel
 ```
 
-### 2. 下载Nginx安装源文件
+### 2.下载Nginx安装源文件
 
 源码下载，可官网下载地址：http://nginx.org/en/download.html 下载并上传到服务器(选择最新稳定版本：`nginx-1.22.0`)
-
 
 或直接在服务上执行以下命令下载 -
 
@@ -51,7 +48,7 @@ tags: [Linux,Nginx]
 
 在编译之前还要做一些前期的准备工作，如：依懒包安装，Nginx用户和用户组等。
 
-### 3. 新建nginx用户及用户组
+### 3.新建nginx用户及用户组
 
 使用 root 用户身份登录系统，执行以下命令创建新的用户。
 
@@ -73,7 +70,7 @@ tags: [Linux,Nginx]
 nginx:x:1002:1003::/home/nginx:/sbin/nologin
 ```
 
-### 4. 编译配置、编译、安装
+### 4.编译配置、编译、安装
 
 下面我们进入解压的nginx源码目录：`/usr/local/src/` 执行以下命令 -
 
@@ -135,7 +132,7 @@ nginx version: nginx/1.22.0
 
 ```shell
 ... ...
-   
+
     server {
         listen       80;
         server_name  localhost;
@@ -211,8 +208,6 @@ Commercial support is available at
 
 或者也可以打开浏览访问目标服务器的IP+端口号查看。
 
-
-
 ## 设置Nginx开机自启动
 
 ### 进入到/lib/systemd/system/目录
@@ -245,8 +240,6 @@ vi nginx.service
 取消开机自启
 
 [root@localhost ~]# systemctl disable nginx
-
-
 
 ### 服务的启动/停止/刷新配置文件/查看状态
 
