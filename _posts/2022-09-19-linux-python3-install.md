@@ -45,8 +45,7 @@ Centos7系统默认安装的python版本为python2.x，目前所开发的Python�
 [root@localhost ~]# make && make install
 ```
 
-解释：
-
+> 命令解释：
 > 解压压缩包
 > 创建安装目录
 > 进入解压后的安装包文件夹
